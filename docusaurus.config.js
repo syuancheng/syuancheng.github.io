@@ -22,8 +22,8 @@ module.exports = {
     navbar: {
       title: 'KEEP CALM AND CARRY ON',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'KEEP CALM AND CARRY ON',
+        src: 'img/profile.jpg',
       },
       items: [
         { to: "about", label: "About", position: "left" },
