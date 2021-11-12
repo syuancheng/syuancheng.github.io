@@ -11,14 +11,7 @@ const features = [
     description: (
       <>
         <p>
-          The meanderings and ramblings of a software engineer. If you were wondering, the
-          slightly egotistical-sounding title of this blog started life as a pun
-          on{" "}
-          <a href="http://en.wikipedia.org/wiki/ICANN" target="_blank">
-            ICANN
-          </a>
-          . Not, if I'm honest, the finest joke in the world but I haven't yet
-          thought of a better name and so here we are...
+          //TODO
         </p>
       </>
     ),
@@ -27,8 +20,10 @@ const features = [
     title: "What do I do?",
     description: (
       <>
-        <p>I work on a number of open source projects including:</p>
-        <ul>
+        <p>I work for a Singapore Internet company, doing server-side development, 
+          Also I am interested in front-end.
+        </p>
+        {/* <ul>
           <li>
             <a href="https://github.com/DefinitelyTyped">Definitely Typed</a>
           </li>
@@ -40,13 +35,7 @@ const features = [
               fork-ts-checker-webpack-plugin
             </a>
           </li>
-        </ul>
-        <p>
-          I also wrote the{" "}
-          <a href="https://blog.johnnyreilly.com/2019/10/08/definitely-typed-movie">
-            history of Definitely Typed
-          </a>
-          </p>
+        </ul> */}
       </>
     ),
   },
@@ -55,19 +44,19 @@ const features = [
     description: (
       <>
         <p>
-          Long-time Londoner, born in Bristol and raised in Fleet. Developer,
-          writer, hedge chopper extraordinaire, father, food botherer, Christian
-          and husband to the most wonderful Geordie wife there ever was!
+          I am Syuan, A Developer started programming 2 years ago. born and raised in Baoji, Shannxi. 
+          Studied in Wuhan, Chengdu, worked in Shenzhen for half a year, now working in Singapore. 
+          Outside of work, I enjoy guitar, cooking and photography.
         </p>
 
-        <p>
+        {/* <p>
           I write the occasional <a href="https://reillysontour.johnnyreilly.com/">
             travel blog(ish)
           </a> as well.
-        </p>
+        </p> */}
 
         <p>
-          You can <a href="mailto:johnny_reilly@hotmail.com">email me</a>.
+          You can <a href="mailto:syuan.cheng@qq.com">email me</a>.
         </p>
       </>
     ),
