@@ -11,7 +11,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'syuancheng', // Usually your GitHub org/user name.
-  projectName: 'syuan-blog', // Usually your repo name.
+  projectName: 'syuancheng.github.io', // Usually your repo name.
   themeConfig: {
     image: 'img/profile.png',
     googleAnalytics: {
