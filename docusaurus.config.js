@@ -12,6 +12,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'syuancheng', // Usually your GitHub org/user name.
   projectName: 'syuancheng.github.io', // Usually your repo name.
+  deploymentBrach: 'master',
   themeConfig: {
     image: 'img/profile.png',
     googleAnalytics: {
