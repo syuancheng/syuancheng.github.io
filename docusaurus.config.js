@@ -101,7 +101,7 @@ module.exports = {
           routeBasePath: "/", // Set this value to '/'.
           showReadingTime: true,
           editUrl:
-            "https://github.com/syuancheng/syuan-blog/edit/main/blog/",
+            "https://github.com/syuancheng/syuancheng.github.io",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
