@@ -5,14 +5,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'KEEP CALM AND CARRY ON',
   tagline: 'The bolg of syuan',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: 'https://syuancheng.github.io/',
+  url: 'https://syuancheng.github.io/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'syuancheng', // Usually your GitHub org/user name.
   projectName: 'syuancheng.github.io', // Usually your repo name.
   deploymentBrach: 'master',
+  trailingSlash: false,
   themeConfig: {
     image: 'img/profile.png',
     googleAnalytics: {
