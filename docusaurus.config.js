@@ -6,7 +6,7 @@ module.exports = {
   title: 'KEEP CALM AND CARRY ON',
   tagline: 'The bolg of syuan',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: 'https://syuancheng.github.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
