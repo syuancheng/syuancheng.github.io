@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[753],{5095:function(e){e.exports=JSON.parse('{"permalink":"/page/4","page":4,"postsPerPage":1,"totalPages":4,"totalCount":4,"previousPage":"/page/3","nextPage":null,"blogDescription":"The blog of syuan","blogTitle":"KEEP CALM AND CARRY ON"}')}}]);
