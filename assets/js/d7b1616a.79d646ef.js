@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[6],{6729:function(a){a.exports=JSON.parse('{"allTagsPath":"/syuancheng.github.io/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/syuancheng.github.io/tags/facebook"}')}}]);

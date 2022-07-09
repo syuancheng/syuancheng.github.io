@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"TypeScript 4.4 and more readable code","permalink":"/2021/08/14/typescript"},{"title":"Welcome","permalink":"/welcome"},{"title":"Hello","permalink":"/hello-world"},{"title":"Hola","permalink":"/hola"}]}')}}]);

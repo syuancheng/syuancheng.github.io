@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://syuancheng.github.io/syuancheng.github.io/</id>
+    <id>https://syuancheng.github.io/</id>
     <title>KEEP CALM AND CARRY ON Blog</title>
     <updated>2021-08-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://syuancheng.github.io/syuancheng.github.io/"/>
+    <link rel="alternate" href="https://syuancheng.github.io/"/>
     <subtitle>KEEP CALM AND CARRY ON Blog</subtitle>
-    <icon>https://syuancheng.github.io/syuancheng.github.io/img/favicon.ico</icon>
+    <icon>https://syuancheng.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[TypeScript 4.4 and more readable code]]></title>
         <id>TypeScript 4.4 and more readable code</id>
-        <link href="https://syuancheng.github.io/syuancheng.github.io/2021/08/14/typescript"/>
+        <link href="https://syuancheng.github.io/2021/08/14/typescript"/>
         <updated>2021-08-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[An exciting feature is shipping with TypeScript 4.4. It has the name "Control Flow Analysis of Aliased Conditions" which is quite a mouthful. This post unpacks what this feature is, and demonstrates the contribution it makes to improving the readability of code.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
-        <link href="https://syuancheng.github.io/syuancheng.github.io/welcome"/>
+        <link href="https://syuancheng.github.io/welcome"/>
         <updated>2019-05-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Blog features are powered by the blog plugin. Simply add files to the blog directory. It supports tags as well!]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello]]></title>
         <id>hello-world</id>
-        <link href="https://syuancheng.github.io/syuancheng.github.io/hello-world"/>
+        <link href="https://syuancheng.github.io/hello-world"/>
         <updated>2019-05-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to this blog. This blog is created with Docusaurus 2.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hola]]></title>
         <id>hola</id>
-        <link href="https://syuancheng.github.io/syuancheng.github.io/hola"/>
+        <link href="https://syuancheng.github.io/hola"/>
         <updated>2019-05-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
     </entry>
