@@ -4,7 +4,7 @@ title: Build blog by Docusaurus and deploy in Git Page
 author: Syuan
 author_title: Back End Engineer @ Shopee
 author_url: https://github.com/syuancheng
-author_image_url: https://avatars1.githubusercontent.com/u/17883920?s=460&v=4
+author_image_url: https://raw.githubusercontent.com/syuancheng/images/master/.github/resource/profile_460x460.jpg
 tags: [Blog, docusaurus, Github]
 ---
 
