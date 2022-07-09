@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[711],{8193:function(s){s.exports=JSON.parse('{"allTagsPath":"/syuancheng.github.io/tags","slug":"type-script","name":"typescript","count":1,"permalink":"/syuancheng.github.io/tags/type-script"}')}}]);
