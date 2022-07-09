@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[214],{1363:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"blog","name":"blog","count":1,"permalink":"/tags/blog"}')}}]);
