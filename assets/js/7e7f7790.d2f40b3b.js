@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[906],{2332:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"regex","name":"regex","count":1,"permalink":"/tags/regex"}')}}]);
