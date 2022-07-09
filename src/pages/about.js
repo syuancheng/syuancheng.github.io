@@ -10,8 +10,8 @@ const features = [
     title: "What is this?",
     description: (
       <>
-        <p>
-          //TODO
+        <p>This is my personal blog website, I will record the progress of study computing technical
+          and my life. Keep Calm and Carry On is what I hope for myself.
         </p>
       </>
     ),
