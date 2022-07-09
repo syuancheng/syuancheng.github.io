@@ -12,7 +12,6 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'syuancheng', // Usually your GitHub org/user name.
   projectName: 'syuancheng.github.io', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
   trailingSlash: false,
   themeConfig: {
     image: 'img/profile.png',
