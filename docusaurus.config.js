@@ -12,7 +12,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'syuancheng', // Usually your GitHub org/user name.
   projectName: 'syuancheng.github.io', // Usually your repo name.
-  trailingSlash: false,
+  onBrokenLinks: 'ignore',
   themeConfig: {
     image: 'img/profile.png',
     googleAnalytics: {
