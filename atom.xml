@@ -2,23 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://syuancheng.github.io/</id>
     <title>KEEP CALM AND CARRY ON Blog</title>
-    <updated>2022-07-09T00:00:00.000Z</updated>
+    <updated>2022-08-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://syuancheng.github.io/"/>
     <subtitle>KEEP CALM AND CARRY ON Blog</subtitle>
     <icon>https://syuancheng.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Regex Basic]]></title>
+        <id>Regex Basic</id>
+        <link href="https://syuancheng.github.io/Regex Basic"/>
+        <updated>2022-08-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Quantifier]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Build blog by Docusaurus and deploy in Git Page]]></title>
         <id>Build blog by Docusaurus and deploy in Git Page</id>
         <link href="https://syuancheng.github.io/Build blog by Docusaurus and deploy in Git Page"/>
         <updated>2022-07-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Docusaurus will help you ship a beautiful documentation site in no time.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[regex]]></title>
-        <id>regex</id>
-        <link href="https://syuancheng.github.io/regex"/>
-        <updated>2019-05-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Upcoming]]></summary>
     </entry>
 </feed>
