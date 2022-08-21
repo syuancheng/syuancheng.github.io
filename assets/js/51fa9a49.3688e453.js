@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[722],{5081:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"study","name":"study","count":1,"permalink":"/tags/study"}')}}]);

@@ -4,9 +4,16 @@
         <title>KEEP CALM AND CARRY ON Blog</title>
         <link>https://syuancheng.github.io/</link>
         <description>KEEP CALM AND CARRY ON Blog</description>
-        <lastBuildDate>Sun, 07 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Aug 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[计算机学习的一些有用建议]]></title>
+            <link>https://syuancheng.github.io/计算机学习的一些有用建议</link>
+            <guid>计算机学习的一些有用建议</guid>
+            <pubDate>Sun, 21 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[本文旨在分享一些优秀前辈们的建议.]]></description>
+        </item>
         <item>
             <title><![CDATA[Regex Basic]]></title>
             <link>https://syuancheng.github.io/Regex Basic</link>

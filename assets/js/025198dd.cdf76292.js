@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[696],{1539:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"c","name":"c++","count":2,"permalink":"/tags/c"}')}}]);
