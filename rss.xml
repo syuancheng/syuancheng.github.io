@@ -4,9 +4,16 @@
         <title>KEEP CALM AND CARRY ON Blog</title>
         <link>https://syuancheng.github.io/</link>
         <description>KEEP CALM AND CARRY ON Blog</description>
-        <lastBuildDate>Sun, 21 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Aug 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[How to go Module]]></title>
+            <link>https://syuancheng.github.io/Go module Basic</link>
+            <guid>Go module Basic</guid>
+            <pubDate>Sat, 27 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[It's easy to encounter some issues in your dependency management. Go module is a dependencies management tool of golang. Go mod is treated as default dependency management tool from go 1.13. And more and more golang developer start to use the Go module to manage their Go project. Based on this, it's necessary to study how to use go mod and how go mod works.]]></description>
+        </item>
         <item>
             <title><![CDATA[计算机学习的一些有用建议]]></title>
             <link>https://syuancheng.github.io/计算机学习的一些有用建议</link>

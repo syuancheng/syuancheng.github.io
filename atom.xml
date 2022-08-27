@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://syuancheng.github.io/</id>
     <title>KEEP CALM AND CARRY ON Blog</title>
-    <updated>2022-08-21T00:00:00.000Z</updated>
+    <updated>2022-08-27T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://syuancheng.github.io/"/>
     <subtitle>KEEP CALM AND CARRY ON Blog</subtitle>
     <icon>https://syuancheng.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[How to go Module]]></title>
+        <id>Go module Basic</id>
+        <link href="https://syuancheng.github.io/Go module Basic"/>
+        <updated>2022-08-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[It's easy to encounter some issues in your dependency management. Go module is a dependencies management tool of golang. Go mod is treated as default dependency management tool from go 1.13. And more and more golang developer start to use the Go module to manage their Go project. Based on this, it's necessary to study how to use go mod and how go mod works.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计算机学习的一些有用建议]]></title>
         <id>计算机学习的一些有用建议</id>
