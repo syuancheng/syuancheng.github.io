@@ -11,7 +11,7 @@ tags: [Blog, docusaurus, Github]
 [Docusaurus](https://docusaurus.io/docs) will help you ship a **beautiful documentation** site in no time.
 Building a custom tech stack is expensive. Instead, focus on your content and just write Markdown files.
 
-## Create a new Docusaurus site
+### Create a new Docusaurus site
 Install [Node.js](https://nodejs.org/en/download/) and create a new Docusaurus site:
 ```cmd
 npx create-docusaurus@latest my-website classic
@@ -23,7 +23,7 @@ npx docusaurus start
 ```
 Open [http://localhost:3000](http://localhost:3000/) and follow the tutorial.
 
-## Project Structure
+### Project Structure
 Assuming you chose the classic template and named your site my-website, you will see the following files generated under a new directory my-website/:
 ```bigquery
 my-website
@@ -50,7 +50,7 @@ my-website
 ├── sidebars.js
 └── yarn.lock
 ```
-### Project structure rundown
+#### Project structure rundown
 
 - /blog/ - Contains the blog Markdown files. You can delete the directory if you've disabled the blog plugin, or you can change its name after setting the path option. More details can be found in the [blog guide](https://docusaurus.io/docs/blog)
 - /docs/ - Contains the Markdown files for the docs. Customize the order of the docs sidebar in sidebars.js. You can delete the directory if you've disabled the docs plugin, or you can change its name after setting the path option. More details can be found in the [docs guide](https://docusaurus.io/docs/docs-introduction)
@@ -62,8 +62,8 @@ my-website
 - /sidebars.js - Used by the documentation to specify the order of documents in the sidebar
 
 
-## Deployment
-### 1. change config file
+### Deployment
+#### 1. change config file
 We have known that **docusaurus.config.js** is a config file that containing the site configuration, so we can change some values of the fields which is about what is shown in home page. apart from this, we have to change the following four attributes, this is very important for deploy.
 ```text
 url: 'https://syuancheng.github.io',
@@ -72,11 +72,11 @@ organizationName: 'syuancheng',
 projectName: 'syuancheng.github.io',
 ```
 
-### 2. config in github
+#### 2. config in github
 create a new branch **gh-pages**
 ![image](../static/resource/blog1_1.png)
 
-### 3. set auto-deploy by github action
+#### 3. set auto-deploy by github action
 create a [.github/workflows/documentation.yml](https://github.com/yingwinwin/yingwinwin.github.io/blob/master/.github/workflows/documentation.yml) file in root folder. refer to [github action hand bool by Ruan Yifeng](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 ```yaml
 name: Deploy Github pages
