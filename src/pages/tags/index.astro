@@ -14,7 +14,7 @@ import { tagSummaries } from '../../lib/posts';
 
   <section class="tag-archive-grid" aria-label="All tags">
     {tagSummaries.map(({ tag, href, posts }) => (
-      <a class="tag-archive-card" href={href}>
+      <a class="tag-archive-link" href={href}>
         <span>{tag}</span>
         <strong>{posts.length} {posts.length === 1 ? 'post' : 'posts'}</strong>
         <em>View Tag Archive</em>

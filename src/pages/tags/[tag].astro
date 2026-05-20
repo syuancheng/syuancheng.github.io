@@ -29,7 +29,7 @@ const taggedPosts = postsByTag(tag);
 
   <section class="post-list" aria-label={`Posts tagged ${tag}`}>
     {taggedPosts.map((post) => (
-      <article class="post-card">
+      <article class="post-entry">
         <time datetime={post.date}>{formatDate(post.date)}</time>
         <div>
           <h3><a href={post.href}>{post.title}</a></h3>

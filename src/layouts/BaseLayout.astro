@@ -14,6 +14,14 @@ const {
 const pageTitle = title === 'KEEP CALM AND CARRY ON'
   ? title
   : `${title} | KEEP CALM AND CARRY ON`;
+
+const navItems = [
+  { href: '/', label: 'HOME' },
+  { href: '/blog-archive/', label: 'ARCHIVES' },
+  { href: '/tags/', label: 'CATEGORIES' },
+  { href: '/projects/', label: 'PROJECTS' },
+  { href: '/about/', label: 'ABOUT' },
+];
 ---
 
 <!doctype html>
@@ -29,13 +37,14 @@ const pageTitle = title === 'KEEP CALM AND CARRY ON'
     <div class="site-shell">
       <header class="site-header">
         <nav class="nav" aria-label="Primary navigation">
+          <a class="site-identity" href="/" aria-label="KEEP CALM AND CARRY ON home">
+            <img src="/static/img/profile.jpg" alt="" width="44" height="44" />
+            <span>Syuan</span>
+          </a>
           <div class="nav-links">
-            <a href="/">HOME</a>
-            <a href="/blog-archive/">ARCHIVES</a>
-            <a href="/tags/">CATEGORIES</a>
-            <a href="/projects/">PROJECTS</a>
-            <a href="/about/">ABOUT</a>
+            {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
           </div>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">DARK</button>
         </nav>
       </header>
       <main class="page">
@@ -45,5 +54,29 @@ const pageTitle = title === 'KEEP CALM AND CARRY ON'
         <div>Copyright © {new Date().getFullYear()} Syuan. Built with Astro.</div>
       </footer>
     </div>
+    <script is:inline>
+      const storageKey = 'syuan-theme';
+      const root = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
+      const savedTheme = localStorage.getItem(storageKey);
+
+      if (savedTheme === 'dark') {
+        root.dataset.theme = 'dark';
+        if (toggle) toggle.textContent = 'LIGHT';
+      }
+
+      toggle?.addEventListener('click', () => {
+        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        if (nextTheme === 'dark') {
+          root.dataset.theme = 'dark';
+          localStorage.setItem(storageKey, 'dark');
+          toggle.textContent = 'LIGHT';
+        } else {
+          delete root.dataset.theme;
+          localStorage.setItem(storageKey, 'light');
+          toggle.textContent = 'DARK';
+        }
+      });
+    </script>
   </body>
 </html>

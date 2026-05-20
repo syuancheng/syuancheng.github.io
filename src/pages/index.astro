@@ -27,7 +27,7 @@ import { formatDate, posts, tagHref } from '../lib/posts';
 
   <section class="post-list" aria-label="Recent posts">
     {posts.map((post) => (
-      <article class="post-card">
+      <article class="post-entry">
         <time datetime={post.date}>{formatDate(post.date)}</time>
         <div>
           <h3><a href={post.href}>{post.title}</a></h3>
