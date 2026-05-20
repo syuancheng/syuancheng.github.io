@@ -1,1 +1,24 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Projects by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>Projects | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.B_0e9zn-.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <div class="nav-links"> <a href="/">HOME</a> <a href="/blog-archive/">ARCHIVES</a> <a href="/tags/">CATEGORIES</a> <a href="/projects/">PROJECTS</a> <a href="/about/">ABOUT</a> </div> </nav> </header> <main class="page">  <section class="hero hero-simple"> <div> <p class="eyebrow">Projects</p> <h1>Selected Work</h1> <p>A quiet place for engineering projects, experiments, and notes. For now, the full archive lives on GitHub.</p> <div class="hero-actions"> <a href="https://github.com/syuancheng">Visit GitHub</a> </div> </div> </section>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> </body></html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Projects by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>Projects | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.DHSMfwck.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="site-identity" href="/" aria-label="KEEP CALM AND CARRY ON home"> <img src="/static/img/profile.jpg" alt="" width="44" height="44"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/">HOME</a><a href="/blog-archive/">ARCHIVES</a><a href="/tags/">CATEGORIES</a><a href="/projects/">PROJECTS</a><a href="/about/">ABOUT</a> </div> <button class="theme-toggle" type="button" aria-label="Toggle dark mode">DARK</button> </nav> </header> <main class="page">  <section class="hero hero-simple"> <div> <p class="eyebrow">Projects</p> <h1>Selected Work</h1> <p>A quiet place for engineering projects, experiments, and notes. For now, the full archive lives on GitHub.</p> <div class="hero-actions"> <a href="https://github.com/syuancheng">Visit GitHub</a> </div> </div> </section>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
+      const storageKey = 'syuan-theme';
+      const root = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
+      const savedTheme = localStorage.getItem(storageKey);
+
+      if (savedTheme === 'dark') {
+        root.dataset.theme = 'dark';
+        if (toggle) toggle.textContent = 'LIGHT';
+      }
+
+      toggle?.addEventListener('click', () => {
+        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        if (nextTheme === 'dark') {
+          root.dataset.theme = 'dark';
+          localStorage.setItem(storageKey, 'dark');
+          toggle.textContent = 'LIGHT';
+        } else {
+          delete root.dataset.theme;
+          localStorage.setItem(storageKey, 'light');
+          toggle.textContent = 'DARK';
+        }
+      });
+    </script> </body> </html>

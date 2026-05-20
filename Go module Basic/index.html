@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="How to use go Module by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>How to use go Module | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.B_0e9zn-.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <div class="nav-links"> <a href="/">HOME</a> <a href="/blog-archive/">ARCHIVES</a> <a href="/tags/">CATEGORIES</a> <a href="/projects/">PROJECTS</a> <a href="/about/">ABOUT</a> </div> </nav> </header> <main class="page">  <article> <header class="post-header"> <p class="eyebrow">Article</p> <h1>How to use go Module</h1> <div class="meta">Aug 27, 2022 · Syuan</div> <div class="tags"> <a class="tag" href="/tags/golang/">Golang</a><a class="tag" href="/tags/go-module/">go module</a> </div> </header> <div class="prose"> <p>It’s easy to encounter some issues in your dependency management. Go module is a dependencies management tool of golang. Go mod is treated as default dependency management tool from go 1.13. And more and more golang developer start to use the Go module to manage their Go project. Based on this, it’s necessary to study how to use go mod and how go mod works.</p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="How to use go Module by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>How to use go Module | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.DHSMfwck.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="site-identity" href="/" aria-label="KEEP CALM AND CARRY ON home"> <img src="/static/img/profile.jpg" alt="" width="44" height="44"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/">HOME</a><a href="/blog-archive/">ARCHIVES</a><a href="/tags/">CATEGORIES</a><a href="/projects/">PROJECTS</a><a href="/about/">ABOUT</a> </div> <button class="theme-toggle" type="button" aria-label="Toggle dark mode">DARK</button> </nav> </header> <main class="page">  <article> <header class="post-header"> <p class="eyebrow">Article</p> <h1>How to use go Module</h1> <div class="meta">Aug 27, 2022 · Syuan</div> <div class="tags"> <a class="tag" href="/tags/golang/">Golang</a><a class="tag" href="/tags/go-module/">go module</a> </div> </header> <div class="prose"> <p>It’s easy to encounter some issues in your dependency management. Go module is a dependencies management tool of golang. Go mod is treated as default dependency management tool from go 1.13. And more and more golang developer start to use the Go module to manage their Go project. Based on this, it’s necessary to study how to use go mod and how go mod works.</p>
 <h4 id="modules-packages-and-versions">Modules, packages, and versions</h4>
 <ul>
 <li>
@@ -75,4 +75,27 @@ For example, you need to know why git.garena.com/common/gocommon is required by 
 <ol>
 <li>As a maintainer, keep backward compatibility as much as you can. <a href="https://blog.golang.org/module-compatibility">https://blog.golang.org/module-compatibility</a></li>
 <li>Use the same version of a certain module if it’s possible for all of your modules.</li>
-</ol> </div> </article>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> </body></html>
+</ol> </div> </article>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
+      const storageKey = 'syuan-theme';
+      const root = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
+      const savedTheme = localStorage.getItem(storageKey);
+
+      if (savedTheme === 'dark') {
+        root.dataset.theme = 'dark';
+        if (toggle) toggle.textContent = 'LIGHT';
+      }
+
+      toggle?.addEventListener('click', () => {
+        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        if (nextTheme === 'dark') {
+          root.dataset.theme = 'dark';
+          localStorage.setItem(storageKey, 'dark');
+          toggle.textContent = 'LIGHT';
+        } else {
+          delete root.dataset.theme;
+          localStorage.setItem(storageKey, 'light');
+          toggle.textContent = 'DARK';
+        }
+      });
+    </script> </body> </html>

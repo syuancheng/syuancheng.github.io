@@ -1,1 +1,24 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="All blog posts by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>Blog Archive | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.B_0e9zn-.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <div class="nav-links"> <a href="/">HOME</a> <a href="/blog-archive/">ARCHIVES</a> <a href="/tags/">CATEGORIES</a> <a href="/projects/">PROJECTS</a> <a href="/about/">ABOUT</a> </div> </nav> </header> <main class="page">  <section class="hero"> <div> <p class="eyebrow">Archive</p> <h1>Blog Archive</h1> <p>All posts, newest first.</p> </div> </section> <ol class="archive-list"> <li> <time datetime="2022-08-27">Aug 27, 2022</time> <a href="/Go%20module%20Basic/">How to use go Module</a> </li><li> <time datetime="2022-08-21">Aug 21, 2022</time> <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E5%BB%BA%E8%AE%AE/">计算机学习的一些有用建议</a> </li><li> <time datetime="2022-08-07">Aug 07, 2022</time> <a href="/Regex%20Basic/">Regex Basic</a> </li><li> <time datetime="2022-07-09">Jul 09, 2022</time> <a href="/Build%20blog%20by%20Docusaurus%20and%20deploy%20in%20Git%20Page/">Build blog by Docusaurus and deploy in Git Page</a> </li> </ol>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> </body></html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="All blog posts by Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>Blog Archive | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.DHSMfwck.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="site-identity" href="/" aria-label="KEEP CALM AND CARRY ON home"> <img src="/static/img/profile.jpg" alt="" width="44" height="44"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/">HOME</a><a href="/blog-archive/">ARCHIVES</a><a href="/tags/">CATEGORIES</a><a href="/projects/">PROJECTS</a><a href="/about/">ABOUT</a> </div> <button class="theme-toggle" type="button" aria-label="Toggle dark mode">DARK</button> </nav> </header> <main class="page">  <section class="hero"> <div> <p class="eyebrow">Archive</p> <h1>Blog Archive</h1> <p>All posts, newest first.</p> </div> </section> <ol class="archive-list"> <li> <time datetime="2022-08-27">Aug 27, 2022</time> <a href="/Go%20module%20Basic/">How to use go Module</a> </li><li> <time datetime="2022-08-21">Aug 21, 2022</time> <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E5%BB%BA%E8%AE%AE/">计算机学习的一些有用建议</a> </li><li> <time datetime="2022-08-07">Aug 07, 2022</time> <a href="/Regex%20Basic/">Regex Basic</a> </li><li> <time datetime="2022-07-09">Jul 09, 2022</time> <a href="/Build%20blog%20by%20Docusaurus%20and%20deploy%20in%20Git%20Page/">Build blog by Docusaurus and deploy in Git Page</a> </li> </ol>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
+      const storageKey = 'syuan-theme';
+      const root = document.documentElement;
+      const toggle = document.querySelector('.theme-toggle');
+      const savedTheme = localStorage.getItem(storageKey);
+
+      if (savedTheme === 'dark') {
+        root.dataset.theme = 'dark';
+        if (toggle) toggle.textContent = 'LIGHT';
+      }
+
+      toggle?.addEventListener('click', () => {
+        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        if (nextTheme === 'dark') {
+          root.dataset.theme = 'dark';
+          localStorage.setItem(storageKey, 'dark');
+          toggle.textContent = 'LIGHT';
+        } else {
+          delete root.dataset.theme;
+          localStorage.setItem(storageKey, 'light');
+          toggle.textContent = 'DARK';
+        }
+      });
+    </script> </body> </html>
