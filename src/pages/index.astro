@@ -5,18 +5,53 @@ import { formatDate, posts } from '../lib/posts';
 
 <BaseLayout>
   <section class="hero">
-    <h1>KEEP CALM AND CARRY ON</h1>
-    <p>The blog of syuan. Notes on backend engineering, programming languages, computer science, and the craft of learning.</p>
+    <div>
+      <p class="eyebrow">Backend engineer · Notes on software craft</p>
+      <h1>KEEP CALM AND CARRY ON</h1>
+      <p>The blog of syuan. I write about backend engineering, programming languages, computer science, and the craft of learning.</p>
+      <div class="hero-actions">
+        <a href="/blog-archive/">Read the archive</a>
+        <a href="https://github.com/syuancheng">GitHub</a>
+      </div>
+    </div>
+    <aside class="profile-panel" aria-label="Profile summary">
+      <img src="/static/img/profile.jpg" alt="Syuan profile photo" width="112" height="112" />
+      <p>Building reliable services, learning in public, and collecting practical engineering notes.</p>
+    </aside>
   </section>
 
-  <section class="post-list" aria-label="Latest posts">
+  <section class="section-heading">
+    <p class="eyebrow">Latest writing</p>
+    <h2>Recent posts</h2>
+  </section>
+
+  <section class="post-list" aria-label="Recent posts">
     {posts.map((post) => (
       <article class="post-card">
-        <h2><a href={post.href}>{post.title}</a></h2>
-        <div class="meta">{formatDate(post.date)} · {post.author}</div>
-        {post.tags.length > 0 && (
-          <div class="tags">
-            {post.tags.map((tag) => <span class="tag">{tag}</span>)}
+        <time datetime={post.date}>{formatDate(post.date)}</time>
+        <div>
+          <h3><a href={post.href}>{post.title}</a></h3>
+          {post.tags.length > 0 && (
+            <div class="tags">
+              {post.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+          )}
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="section-heading">
+    <p class="eyebrow">Focus</p>
+    <h2>Topics I keep returning to</h2>
+  </section>
+
+  <section class="topic-grid" aria-label="Topics">
+    {['Backend systems', 'Golang', 'Computer science', 'C++', 'Learning notes', 'Developer tools'].map((topic) => (
+      <div class="topic-item">{topic}</div>
+    ))}
+  </section>
+</BaseLayout>
           </div>
         )}
       </article>

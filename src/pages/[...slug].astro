@@ -22,6 +22,7 @@ const { Content } = post;
 <BaseLayout title={post.title} description={`${post.title} by ${post.author}`}>
   <article>
     <header class="post-header">
+      <p class="eyebrow">Article</p>
       <h1>{post.title}</h1>
       <div class="meta">{formatDate(post.date)} · {post.author}</div>
       {post.tags.length > 0 && (

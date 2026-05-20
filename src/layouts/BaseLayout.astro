@@ -24,6 +24,11 @@ const pageTitle = title === 'KEEP CALM AND CARRY ON'
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/static/img/favicon.ico" />
     <title>{pageTitle}</title>
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = storedTheme ?? preferredTheme;
+    </script>
   </head>
   <body>
     <div class="site-shell">
@@ -31,12 +36,15 @@ const pageTitle = title === 'KEEP CALM AND CARRY ON'
         <nav class="nav" aria-label="Primary navigation">
           <a class="brand" href="/">
             <img src="/static/img/profile.jpg" alt="" width="40" height="40" />
-            <span>KEEP CALM AND CARRY ON</span>
+            <span>Syuan</span>
           </a>
           <div class="nav-links">
             <a href="/about/">About</a>
             <a href="/blog-archive/">Blog Archive</a>
             <a href="https://github.com/syuancheng">GitHub</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+              <span aria-hidden="true"></span>
+            </button>
           </div>
         </nav>
       </header>
@@ -47,5 +55,13 @@ const pageTitle = title === 'KEEP CALM AND CARRY ON'
         <div>Copyright © {new Date().getFullYear()} Syuan. Built with Astro.</div>
       </footer>
     </div>
+    <script is:inline>
+      const button = document.querySelector('.theme-toggle');
+      button?.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem('theme', nextTheme);
+      });
+    </script>
   </body>
 </html>
