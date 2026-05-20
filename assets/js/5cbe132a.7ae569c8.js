@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksyuan_blog=self.webpackChunksyuan_blog||[]).push([[9],{5504:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","slug":"go-module","name":"go module","count":1,"permalink":"/tags/go-module"}')}}]);
