@@ -1,6 +1,6 @@
 import type { MarkdownInstance } from 'astro';
 
-type BlogFrontmatter = {
+export type BlogFrontmatter = {
   slug?: string;
   title: string;
   author?: string;
@@ -11,12 +11,12 @@ const modules = import.meta.glob<MarkdownInstance<BlogFrontmatter>>('../../blog/
   eager: true,
 });
 
-function dateFromPath(path: string) {
+function dateFromPath(path: string): string {
   const match = path.match(/(\d{4}-\d{2}-\d{2})/);
   return match?.[1] ?? '1970-01-01';
 }
 
-function pathSlug(path: string) {
+function pathSlug(path: string): string {
   return path
     .split('/')
     .pop()
@@ -43,7 +43,7 @@ export const posts = Object.entries(modules)
 
 export type BlogPost = (typeof posts)[number];
 
-export function formatDate(date: string) {
+export function formatDate(date: string): string {
   return new Intl.DateTimeFormat('en', {
     year: 'numeric',
     month: 'short',
