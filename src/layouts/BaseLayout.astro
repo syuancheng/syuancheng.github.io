@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = 'KEEP CALM AND CARRY ON',
+  description = 'The blog of syuan',
+} = Astro.props;
+
+const pageTitle = title === 'KEEP CALM AND CARRY ON'
+  ? title
+  : `${title} | KEEP CALM AND CARRY ON`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/static/img/favicon.ico" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="/">
+            <img src="/static/img/profile.jpg" alt="" width="40" height="40" />
+            <span>KEEP CALM AND CARRY ON</span>
+          </a>
+          <div class="nav-links">
+            <a href="/about/">About</a>
+            <a href="/blog-archive/">Blog Archive</a>
+            <a href="https://github.com/syuancheng">GitHub</a>
+          </div>
+        </nav>
+      </header>
+      <main class="page">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <div>Copyright © {new Date().getFullYear()} Syuan. Built with Astro.</div>
+      </footer>
+    </div>
+  </body>
+</html>

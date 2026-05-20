@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, posts } from '../lib/posts';
+---
+
+<BaseLayout title="Blog Archive" description="All blog posts by Syuan">
+  <section class="hero">
+    <h1>Blog Archive</h1>
+    <p>All posts, newest first.</p>
+  </section>
+
+  <ol class="archive-list">
+    {posts.map((post) => (
+      <li>
+        <time datetime={post.date}>{formatDate(post.date)}</time>
+        <a href={post.href}>{post.title}</a>
+      </li>
+    ))}
+  </ol>
+</BaseLayout>

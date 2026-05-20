@@ -3,9 +3,11 @@
 
 # Production
 /build
+/dist
 
 # Generated files
 .docusaurus
+.astro
 .cache-loader
 
 # Misc

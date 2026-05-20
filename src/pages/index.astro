@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, posts } from '../lib/posts';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <h1>KEEP CALM AND CARRY ON</h1>
+    <p>The blog of syuan. Notes on backend engineering, programming languages, computer science, and the craft of learning.</p>
+  </section>
+
+  <section class="post-list" aria-label="Latest posts">
+    {posts.map((post) => (
+      <article class="post-card">
+        <h2><a href={post.href}>{post.title}</a></h2>
+        <div class="meta">{formatDate(post.date)} · {post.author}</div>
+        {post.tags.length > 0 && (
+          <div class="tags">
+            {post.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        )}
+      </article>
+    ))}
+  </section>
+</BaseLayout>
