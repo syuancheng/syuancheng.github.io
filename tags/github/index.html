@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Posts tagged Github"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>Github | KEEP CALM AND CARRY ON</title><script>
+      const storedTheme = localStorage.getItem('theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = storedTheme ?? preferredTheme;
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.BhKMudjK.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="brand" href="/"> <img src="/static/img/profile.jpg" alt="" width="40" height="40"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/about/">About</a> <a href="/blog-archive/">Blog Archive</a> <a href="/tags/">Tags</a> <a href="https://github.com/syuancheng">GitHub</a> <button class="theme-toggle" type="button" aria-label="Toggle color theme"> <span aria-hidden="true"></span> </button> </div> </nav> </header> <main class="page">  <section class="hero hero-simple"> <div> <p class="eyebrow">Tag Archive</p> <h1>Github</h1> <p>1 post filed under this topic.</p> </div> </section> <section class="post-list" aria-label="Posts tagged Github"> <article class="post-card"> <time datetime="2022-07-09">Jul 09, 2022</time> <div> <h3><a href="/Build%20blog%20by%20Docusaurus%20and%20deploy%20in%20Git%20Page/">Build blog by Docusaurus and deploy in Git Page</a></h3> <div class="tags"> <span class="tag">Blog</span><span class="tag">docusaurus</span><span class="tag tag-active">Github</span> </div> </div> </article> </section>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
+      const button = document.querySelector('.theme-toggle');
+      button?.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem('theme', nextTheme);
+      });
+    </script> </body> </html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Posts tagged go module"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>go module | KEEP CALM AND CARRY ON</title><script>
+      const storedTheme = localStorage.getItem('theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = storedTheme ?? preferredTheme;
+    </script><link rel="stylesheet" href="/_astro/BaseLayout.BhKMudjK.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="brand" href="/"> <img src="/static/img/profile.jpg" alt="" width="40" height="40"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/about/">About</a> <a href="/blog-archive/">Blog Archive</a> <a href="/tags/">Tags</a> <a href="https://github.com/syuancheng">GitHub</a> <button class="theme-toggle" type="button" aria-label="Toggle color theme"> <span aria-hidden="true"></span> </button> </div> </nav> </header> <main class="page">  <section class="hero hero-simple"> <div> <p class="eyebrow">Tag Archive</p> <h1>go module</h1> <p>1 post filed under this topic.</p> </div> </section> <section class="post-list" aria-label="Posts tagged go module"> <article class="post-card"> <time datetime="2022-08-27">Aug 27, 2022</time> <div> <h3><a href="/Go%20module%20Basic/">How to use go Module</a></h3> <div class="tags"> <span class="tag">Golang</span><span class="tag tag-active">go module</span> </div> </div> </article> </section>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
+      const button = document.querySelector('.theme-toggle');
+      button?.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem('theme', nextTheme);
+      });
+    </script> </body> </html>
