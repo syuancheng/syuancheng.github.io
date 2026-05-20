@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { tagSummaries } from '../../lib/posts';
+---
+
+<BaseLayout title="Tags" description="All tags on Syuan's blog">
+  <section class="hero hero-simple">
+    <div>
+      <p class="eyebrow">Tags</p>
+      <h1>All Tags</h1>
+      <p>Browse posts by topic.</p>
+    </div>
+  </section>
+
+  <section class="tag-archive-grid" aria-label="All tags">
+    {tagSummaries.map(({ tag, href, posts }) => (
+      <a class="tag-archive-card" href={href}>
+        <span>{tag}</span>
+        <strong>{posts.length} {posts.length === 1 ? 'post' : 'posts'}</strong>
+        <em>View Tag Archive</em>
+      </a>
+    ))}
+  </section>
+</BaseLayout>

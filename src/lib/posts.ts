@@ -43,6 +43,41 @@ export const posts = Object.entries(modules)
 
 export type BlogPost = (typeof posts)[number];
 
+export function tagSlug(tag: string): string {
+  return tag
+    .trim()
+    .toLowerCase()
+    .replace(/\+/g, '-plus')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export function tagHref(tag: string): string {
+  return `/tags/${tagSlug(tag)}/`;
+}
+
+export const tagSummaries = Array.from(
+  posts.reduce((map, post) => {
+    post.tags.forEach((tag) => {
+      const existing = map.get(tag) ?? [];
+      existing.push(post);
+      map.set(tag, existing);
+    });
+    return map;
+  }, new Map<string, BlogPost[]>()),
+)
+  .map(([tag, taggedPosts]) => ({
+    tag,
+    slug: tagSlug(tag),
+    href: tagHref(tag),
+    posts: taggedPosts.sort((a, b) => b.date.localeCompare(a.date)),
+  }))
+  .sort((a, b) => b.posts.length - a.posts.length || a.tag.localeCompare(b.tag));
+
+export function postsByTag(tag: string): BlogPost[] {
+  return tagSummaries.find((summary) => summary.tag === tag)?.posts ?? [];
+}
+
 export function formatDate(date: string): string {
   return new Intl.DateTimeFormat('en', {
     year: 'numeric',

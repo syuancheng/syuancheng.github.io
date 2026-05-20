@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatDate, posts } from '../lib/posts';
+import { formatDate, posts, tagHref } from '../lib/posts';
 ---
 
 <BaseLayout>
@@ -33,7 +33,7 @@ import { formatDate, posts } from '../lib/posts';
           <h3><a href={post.href}>{post.title}</a></h3>
           {post.tags.length > 0 && (
             <div class="tags">
-              {post.tags.map((tag) => <span class="tag">{tag}</span>)}
+              {post.tags.map((tag) => <a class="tag" href={tagHref(tag)}>{tag}</a>)}
             </div>
           )}
         </div>

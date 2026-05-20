@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import type { BlogPost } from '../lib/posts';
-import { formatDate, posts } from '../lib/posts';
+import { formatDate, posts, tagHref } from '../lib/posts';
 
 type Props = {
   post: BlogPost;
@@ -27,7 +27,7 @@ const { Content } = post;
       <div class="meta">{formatDate(post.date)} · {post.author}</div>
       {post.tags.length > 0 && (
         <div class="tags">
-          {post.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+          {post.tags.map((tag: string) => <a class="tag" href={tagHref(tag)}>{tag}</a>)}
         </div>
       )}
     </header>

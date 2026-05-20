@@ -1,0 +1,45 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, postsByTag, tagSummaries } from '../../lib/posts';
+
+type Props = {
+  tag: string;
+};
+
+export const getStaticPaths = (() => {
+  return tagSummaries.map(({ tag, slug }) => ({
+    params: { tag: slug },
+    props: { tag },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag } = Astro.props as Props;
+const taggedPosts = postsByTag(tag);
+---
+
+<BaseLayout title={tag} description={`Posts tagged ${tag}`}>
+  <section class="hero hero-simple">
+    <div>
+      <p class="eyebrow">Tag Archive</p>
+      <h1>{tag}</h1>
+      <p>{taggedPosts.length} {taggedPosts.length === 1 ? 'post' : 'posts'} filed under this topic.</p>
+    </div>
+  </section>
+
+  <section class="post-list" aria-label={`Posts tagged ${tag}`}>
+    {taggedPosts.map((post) => (
+      <article class="post-card">
+        <time datetime={post.date}>{formatDate(post.date)}</time>
+        <div>
+          <h3><a href={post.href}>{post.title}</a></h3>
+          <div class="tags">
+            {post.tags.map((postTag) => (
+              <span class={postTag === tag ? 'tag tag-active' : 'tag'}>{postTag}</span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
