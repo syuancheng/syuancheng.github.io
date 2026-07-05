@@ -1,24 +1,383 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="About Syuan"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" href="/static/img/favicon.ico"><title>About | KEEP CALM AND CARRY ON</title><link rel="stylesheet" href="/_astro/BaseLayout.DHSMfwck.css"></head> <body> <div class="site-shell"> <header class="site-header"> <nav class="nav" aria-label="Primary navigation"> <a class="site-identity" href="/" aria-label="KEEP CALM AND CARRY ON home"> <img src="/static/img/profile.jpg" alt="" width="44" height="44"> <span>Syuan</span> </a> <div class="nav-links"> <a href="/">HOME</a><a href="/blog-archive/">ARCHIVES</a><a href="/tags/">CATEGORIES</a><a href="/projects/">PROJECTS</a><a href="/about/">ABOUT</a> </div> <button class="theme-toggle" type="button" aria-label="Toggle dark mode">DARK</button> </nav> </header> <main class="page">  <section class="hero"> <div> <p class="eyebrow">About</p> <h1>Syuan</h1> <p>Backend engineer writing notes about software engineering, computer science, and practical development experience.</p> </div> </section> <section class="about-grid"> <img src="/static/img/profile.jpg" alt="Syuan profile photo" width="180" height="180"> <div class="prose"> <p>Hi, I am Syuan. This site collects my technical notes and learning references.</p> <p>You can find me on <a href="https://github.com/syuancheng">GitHub</a>.</p> </div> </section>  </main> <footer class="site-footer"> <div>Copyright © 2026 Syuan. Built with Astro.</div> </footer> </div> <script>
-      const storageKey = 'syuan-theme';
-      const root = document.documentElement;
-      const toggle = document.querySelector('.theme-toggle');
-      const savedTheme = localStorage.getItem(storageKey);
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="About Siyuan Cheng"><meta name="theme-color" content="#fbfbfa"><link rel="icon" href="/static/img/favicon.ico"><title>About | Siyuan</title><link rel="stylesheet" href="/_astro/BaseLayout.CcceVfyl.css"></head> <body data-sticky-nav="true"> <header class="site-header"> <nav class="nav shell" aria-label="Primary navigation"> <a class="brand" href="/#home" data-route="home" aria-label="Go to home"> <span>Siyuan Cheng</span> </a> <div class="nav-right"> <div class="nav-links"> <button class="nav-link" data-scroll-target="writing" data-i18n="navWriting">Writing</button> <a class="nav-link" href="/about/" data-i18n="navAbout">About</a> <button class="nav-link" id="photoNav" data-route="photography" data-i18n="navPhotography">Photography</button> </div> <button class="language-toggle" id="languageToggle" aria-label="Switch language" title="Switch language"> <svg aria-hidden="true" viewBox="0 0 24 24"> <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"></path> <path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.1 2.3 3.1 5.3 3.1 9s-1 6.7-3.1 9M12 3C9.9 5.3 8.9 8.3 8.9 12s1 6.7 3.1 9"></path> </svg> </button> </div> </nav> </header> <main class="page shell">  <section class="about-construction"> <div class="page-hero construction-page about-intro"> <div> <p class="eyebrow">About</p> <h1> <span>Siyuan Cheng</span> <span class="about-name-cn">[程思元]</span> </h1> <img class="about-profile-photo" src="/static/img/about-profile.jpeg" alt="Siyuan Cheng in front of mountains" width="768" height="1024" loading="lazy"> <p>
+I am a Senior Backend Engineer at Shopee Singapore, where I work on large-scale
+      recommendation systems, observability platforms, and AI-agent applications. My work
+      mainly involves building reliable backend infrastructure with C++ and Go, improving
+      system resilience, and developing tools for production monitoring and troubleshooting.
+</p> <p>
+My current interests include distributed systems, recommendation systems, AI agents,
+      and AI infrastructure. I enjoy exploring how modern AI capabilities can be integrated
+      into practical engineering workflows and production systems.
+</p> <p>
+Before that, I received my M.Eng. in Materials Science and Engineering from the
+      University of Electronic Science and Technology of China, and my B.Eng. in New Energy
+      Materials and Devices from Wuhan University of Technology.
+</p> </div> </div> <aside class="about-side" aria-label="Article tag cloud"> <div class="about-cloud-words"> <span class="about-cloud-word tone-1" style="--size: 68px; --x: 50%; --y: 49%; --tilt: 0deg;"> C++ </span><span class="about-cloud-word tone-3" style="--size: 28px; --x: 22%; --y: 23%; --tilt: 0deg;"> Blog </span><span class="about-cloud-word tone-2" style="--size: 27px; --x: 77%; --y: 29%; --tilt: 0deg;"> CS </span><span class="about-cloud-word tone-2" style="--size: 26px; --x: 32%; --y: 68%; --tilt: 0deg;"> Docusaurus </span><span class="about-cloud-word tone-3" style="--size: 25px; --x: 73%; --y: 67%; --tilt: -5deg;"> GitHub </span><span class="about-cloud-word tone-1" style="--size: 21px; --x: 18%; --y: 47%; --tilt: -8deg;"> Go Module </span><span class="about-cloud-word tone-1" style="--size: 21px; --x: 84%; --y: 48%; --tilt: 0deg;"> Golang </span><span class="about-cloud-word tone-2" style="--size: 20px; --x: 30%; --y: 86%; --tilt: 0deg;"> OS </span><span class="about-cloud-word tone-1" style="--size: 20px; --x: 58%; --y: 85%; --tilt: 0deg;"> Regex </span><span class="about-cloud-word tone-2" style="--size: 20px; --x: 80%; --y: 86%; --tilt: 0deg;"> Study </span> </div> </aside> <div class="visitor-map" aria-label="Visitor location map" data-visitor-map> <iframe class="visitor-map-frame" title="Visitor location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-visitor-map-frame hidden></iframe> <div class="visitor-map-placeholder" data-visitor-map-placeholder> <svg class="visitor-map-art" viewBox="0 0 560 260" role="img" aria-label="World map"> <path d="M82 96c25-30 70-39 107-22 18 8 42 4 63-3 33-12 70-5 97 17 17 14 43 17 65 13 32-6 61 9 77 36 17 30 7 65-23 82-37 21-91 8-127-16-26-18-58-20-84-2-35 24-84 29-122 8-41-23-76-69-53-113Z"></path> <path d="M124 48c39-20 85-18 118 4 17 11 24 29 15 43-11 18-41 20-68 12-40-12-86-21-65-59Z"></path> <path d="M344 52c55-25 124-9 153 37 16 26 4 58-28 65-45 10-89-23-122-55-21-20-26-36-3-47Z"></path> <path d="M230 143c23-13 53-11 70 5 17 15 17 39 0 55-19 17-52 16-72-3-18-17-17-43 2-57Z"></path> <path d="M402 174c26-13 65-4 82 19 13 18 7 40-15 49-29 12-70 0-84-24-10-17-4-35 17-44Z"></path> </svg> </div> <div class="visitor-map-caption"> <span class="visitor-dot"></span> <span class="visitor-location" data-visitor-location>Locating visitor...</span> <span class="visitor-coordinates" data-visitor-coordinates></span> </div> </div> <script>
+  document.querySelectorAll('[data-visitor-map]').forEach((visitorMap) => {
+    const visitorMapFrame = visitorMap.querySelector('[data-visitor-map-frame]');
+    const visitorMapPlaceholder = visitorMap.querySelector('[data-visitor-map-placeholder]');
+    const visitorLocation = visitorMap.querySelector('[data-visitor-location]');
+    const visitorCoordinates = visitorMap.querySelector('[data-visitor-coordinates]');
 
-      if (savedTheme === 'dark') {
-        root.dataset.theme = 'dark';
-        if (toggle) toggle.textContent = 'LIGHT';
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateVisitorMap(latitude, longitude) {
+      if (!visitorMapFrame || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+
+      const delta = 0.18;
+      const left = clamp(longitude - delta, -180, 180);
+      const right = clamp(longitude + delta, -180, 180);
+      const bottom = clamp(latitude - delta, -85, 85);
+      const top = clamp(latitude + delta, -85, 85);
+      const params = new URLSearchParams({
+        bbox: `${left},${bottom},${right},${top}`,
+        layer: 'mapnik',
+        marker: `${latitude},${longitude}`,
+      });
+
+      visitorMapFrame.src = `https://www.openstreetmap.org/export/embed.html?${params.toString()}`;
+      visitorMapFrame.hidden = false;
+      if (visitorMapPlaceholder) visitorMapPlaceholder.hidden = true;
+    }
+
+    if (visitorLocation) {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 3000);
+
+      fetch('https://ipwho.is/', { signal: controller.signal })
+        .then((response) => response.ok ? response.json() : Promise.reject())
+        .then((data) => {
+          if (!data?.success) throw new Error('Visitor location unavailable');
+          const location = [data.city, data.region, data.country].filter(Boolean).join(', ');
+          visitorLocation.textContent = location || 'Visitor location unavailable';
+          const latitude = Number(data.latitude);
+          const longitude = Number(data.longitude);
+          updateVisitorMap(latitude, longitude);
+
+          if (visitorCoordinates && Number.isFinite(latitude) && Number.isFinite(longitude)) {
+            visitorCoordinates.textContent = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
+          }
+        })
+        .catch(() => {
+          visitorLocation.textContent = 'Visitor location unavailable';
+          if (visitorCoordinates) visitorCoordinates.textContent = '';
+        })
+        .finally(() => {
+          window.clearTimeout(timeout);
+        });
+    }
+  });
+</script> </section>  </main> <footer class="footer" id="siteFooter"> <div class="footer-inner shell"> <span data-i18n="footerText">© 2026 Siyuan. Built with patience and plain HTML.</span> <div class="footer-links"> <button class="nav-link" data-scroll-target="writing" data-i18n="navWriting">Writing</button> <a class="nav-link" href="/about/" data-i18n="navAbout">About</a> <button class="nav-link" data-route="photography" data-i18n="navPhotography">Photography</button> </div> </div> </footer> <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle"> <div class="lightbox-dialog"> <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">×</button> <div class="lightbox-visual" id="lightboxVisual"></div> <div class="lightbox-info"> <strong id="lightboxTitle">Photography</strong> <span id="lightboxMeta"></span> </div> </div> </div> <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top"> <svg aria-hidden="true" viewBox="0 0 24 24"> <path d="M12 19V5"></path> <path d="M6 11l6-6 6 6"></path> </svg> </button> <script>
+      const translations = {
+        en: {
+          navWriting: 'Writing',
+          navAbout: 'About',
+          navPhotography: 'Photography',
+          heroEyebrow: 'Engineer · Writer · Observer',
+          heroTitleMain: 'A quiet place for ideas.',
+          heroTitleSub: 'Engineering notes, essays, and a life in progress.',
+          heroCopy: 'I write about backend engineering, programming languages, computer science, and the craft of learning.',
+          readWriting: 'Read writing',
+          learnMore: 'About me',
+          floatingNote: 'Keep building.<br />Keep observing.',
+          featuredKicker: 'Featured Notes',
+          featuredTitle: 'Recent writing',
+          featuredIntro: 'A small collection of notes from the current archive.',
+          readArticle: 'Read article',
+          archiveKicker: 'Writing Archive',
+          archiveTitle: 'All notes',
+          filterAll: 'All',
+          paginationPrev: 'Previous',
+          paginationNext: 'Next',
+          photoEyebrow: 'Photography Journal',
+          photoTitle: 'Light, distance,<br />and ordinary days.',
+          photoIntro: 'Photography is not proof of where I have been. It is a way to preserve the relationship between light, place, and a particular state of mind.',
+          backHome: 'Back to home',
+          backToTop: 'Back to top',
+          footerText: '© 2026 Siyuan. Built with patience and plain HTML.'
+        },
+        zh: {
+          navWriting: '文章',
+          navAbout: '关于',
+          navPhotography: '摄影',
+          heroEyebrow: '工程师 · 写作者 · 观察者',
+          heroTitleMain: '一处安静的思想空间。',
+          heroTitleSub: '记录技术、随笔，以及仍在发生的生活。',
+          heroCopy: '我记录后端工程、编程语言、计算机科学，以及持续学习这件事本身。',
+          readWriting: '阅读文章',
+          learnMore: '关于我',
+          floatingNote: '持续构建。<br />持续观察。',
+          featuredKicker: '精选文章',
+          featuredTitle: '最近更新',
+          featuredIntro: '来自当前归档的一组近期笔记。',
+          readArticle: '阅读全文',
+          archiveKicker: '文章归档',
+          archiveTitle: '全部文章',
+          filterAll: '全部',
+          paginationPrev: '上一页',
+          paginationNext: '下一页',
+          photoEyebrow: '摄影记录',
+          photoTitle: '光线、距离，<br />以及普通的日子。',
+          photoIntro: '摄影不是为了证明我去过哪里，而是为了保存某个瞬间里，光线、地点与情绪之间的关系。',
+          backHome: '返回首页',
+          backToTop: '回到顶部',
+          footerText: '© 2026 Siyuan. 使用耐心与原生 HTML 构建。'
+        }
+      };
+
+      const homeView = document.getElementById('homeView');
+      const photographyView = document.getElementById('photographyView');
+      const languageToggle = document.getElementById('languageToggle');
+      const photoNav = document.getElementById('photoNav');
+      const backToTop = document.getElementById('backToTop');
+      let currentLanguage = localStorage.getItem('siyuan-language') || 'en';
+
+      function applyLanguage(language) {
+        currentLanguage = language;
+        document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const key = element.dataset.i18n;
+          if (translations[language][key] !== undefined) {
+            element.innerHTML = translations[language][key];
+          }
+        });
+
+        document.querySelectorAll('[data-photo-title]').forEach((element) => {
+          const card = element.closest('.photo-card');
+          element.textContent = language === 'zh' ? card.dataset.titleZh : card.dataset.titleEn;
+        });
+
+        if (languageToggle) {
+          languageToggle.setAttribute(
+            'aria-label',
+            language === 'en' ? '切换到中文' : 'Switch to English',
+          );
+          languageToggle.setAttribute(
+            'title',
+            language === 'en' ? '切换到中文' : 'Switch to English',
+          );
+          languageToggle.dataset.language = language;
+        }
+
+        if (backToTop) {
+          backToTop.setAttribute('aria-label', translations[language].backToTop);
+          backToTop.setAttribute('title', translations[language].backToTop);
+        }
+
+        renderPostList();
+        localStorage.setItem('siyuan-language', language);
       }
 
-      toggle?.addEventListener('click', () => {
-        const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        if (nextTheme === 'dark') {
-          root.dataset.theme = 'dark';
-          localStorage.setItem(storageKey, 'dark');
-          toggle.textContent = 'LIGHT';
+      function showRoute(route, updateHash = true) {
+        if (!homeView || !photographyView) {
+          window.location.href = route === 'photography' ? '/#photography' : '/#home';
+          return;
+        }
+
+        const isPhotography = route === 'photography';
+        homeView.hidden = isPhotography;
+        photographyView.hidden = !isPhotography;
+        photoNav?.classList.toggle('active', isPhotography);
+        if (isPhotography) {
+          document.body.dataset.photoNavStatic = 'true';
         } else {
-          delete root.dataset.theme;
-          localStorage.setItem(storageKey, 'light');
-          toggle.textContent = 'DARK';
+          delete document.body.dataset.photoNavStatic;
+        }
+
+        if (updateHash) {
+          history.pushState(null, '', isPhotography ? '#photography' : '#home');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        document.querySelectorAll('.reveal').forEach((element) => {
+          if (!element.closest('[hidden]')) element.classList.add('visible');
+        });
+      }
+
+      function routeFromHash() {
+        return window.location.hash === '#photography' ? 'photography' : 'home';
+      }
+
+      document.querySelectorAll('[data-route]').forEach((element) => {
+        element.addEventListener('click', (event) => {
+          event.preventDefault();
+          showRoute(element.dataset.route);
+        });
+      });
+
+      document.querySelectorAll('[data-scroll-target]').forEach((element) => {
+        element.addEventListener('click', () => {
+          const targetId = element.dataset.scrollTarget;
+
+          if (!homeView || !document.getElementById(targetId)) {
+            window.location.href = `/#${targetId}`;
+            return;
+          }
+
+          if (homeView.hidden) {
+            showRoute('home');
+            requestAnimationFrame(() => {
+              document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            });
+          } else {
+            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      languageToggle?.addEventListener('click', () => {
+        applyLanguage(currentLanguage === 'en' ? 'zh' : 'en');
+      });
+
+      function updateBackToTop() {
+        backToTop?.classList.toggle('visible', window.scrollY > 420);
+      }
+
+      backToTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+
+      window.addEventListener('popstate', () => {
+        if (homeView && photographyView) showRoute(routeFromHash(), false);
+      });
+
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const postRows = document.querySelectorAll('[data-paginated-posts] .post-row');
+      const pagination = document.querySelector('[data-pagination]');
+      const pagePrev = document.querySelector('[data-page-prev]');
+      const pageNext = document.querySelector('[data-page-next]');
+      const pageStatus = document.querySelector('[data-page-status]');
+      const pageSize = 6;
+      let currentFilter = 'all';
+      let currentPage = 1;
+
+      function rowsForCurrentFilter() {
+        return Array.from(postRows).filter((row) => {
+          if (currentFilter === 'all') return true;
+          return row.dataset.tags?.split(' ').includes(currentFilter);
+        });
+      }
+
+      function renderPostList() {
+        if (!postRows.length) return;
+
+        const rows = rowsForCurrentFilter();
+        const totalPages = Math.max(1, Math.ceil(rows.length / pageSize));
+        currentPage = Math.min(currentPage, totalPages);
+        const start = (currentPage - 1) * pageSize;
+        const end = start + pageSize;
+
+        postRows.forEach((row) => {
+          row.hidden = true;
+        });
+
+        rows.forEach((row, index) => {
+          row.hidden = !(index >= start && index < end);
+        });
+
+        if (pagination) {
+          pagination.hidden = rows.length <= pageSize;
+        }
+
+        if (pagePrev) pagePrev.disabled = currentPage <= 1;
+        if (pageNext) pageNext.disabled = currentPage >= totalPages;
+
+        if (pageStatus) {
+          pageStatus.textContent = currentLanguage === 'zh'
+            ? `第 ${currentPage} / ${totalPages} 页`
+            : `Page ${currentPage} / ${totalPages}`;
+        }
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          currentFilter = button.dataset.filter ?? 'all';
+          currentPage = 1;
+          filterButtons.forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+          renderPostList();
+        });
+      });
+
+      pagePrev?.addEventListener('click', () => {
+        currentPage = Math.max(1, currentPage - 1);
+        renderPostList();
+        document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      pageNext?.addEventListener('click', () => {
+        currentPage += 1;
+        renderPostList();
+        document.getElementById('writing')?.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxVisual = document.getElementById('lightboxVisual');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxMeta = document.getElementById('lightboxMeta');
+      const lightboxClose = document.getElementById('lightboxClose');
+      let lastFocusedElement = null;
+
+      function closeLightbox() {
+        lightbox?.classList.remove('open');
+        if (lightboxVisual) lightboxVisual.innerHTML = '';
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      document.querySelectorAll('.photo-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          lastFocusedElement = card;
+          const art = card.querySelector('.photo-art').cloneNode(true);
+
+          lightboxVisual.innerHTML = '';
+          lightboxVisual.appendChild(art);
+          lightboxTitle.textContent =
+            currentLanguage === 'zh' ? card.dataset.titleZh : card.dataset.titleEn;
+          lightboxMeta.textContent = card.dataset.meta;
+          lightbox.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          lightboxClose.focus();
+        });
+      });
+
+      lightboxClose?.addEventListener('click', closeLightbox);
+
+      lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox?.classList.contains('open')) {
+          closeLightbox();
         }
       });
+
+      const observer = 'IntersectionObserver' in window
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 },
+          )
+        : null;
+
+      document.querySelectorAll('.reveal').forEach((element) => {
+        if (observer) observer.observe(element);
+        else element.classList.add('visible');
+      });
+
+      applyLanguage(currentLanguage);
+      renderPostList();
+      if (homeView && photographyView) showRoute(routeFromHash(), false);
+      updateBackToTop();
     </script> </body> </html>
