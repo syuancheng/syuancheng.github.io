@@ -1,0 +1,43 @@
+---
+type Props = {
+  headingLevel?: 'h1' | 'h2';
+  headingId?: string;
+};
+
+const { headingLevel = 'h1', headingId } = Astro.props as Props;
+const Heading = headingLevel;
+---
+
+<div class="page-hero construction-page about-intro">
+  <div>
+    <p class="eyebrow">About</p>
+    <Heading id={headingId}>
+      <span>Siyuan Cheng</span>
+      <span class="about-name-cn">[程思元]</span>
+    </Heading>
+    <img
+      class="about-profile-photo"
+      src="/static/img/about-profile.jpeg"
+      alt="Siyuan Cheng in front of mountains"
+      width="768"
+      height="1024"
+      loading="lazy"
+    />
+    <p>
+      I am a Senior Backend Engineer at Shopee Singapore, where I work on large-scale
+      recommendation systems, observability platforms, and AI-agent applications. My work
+      mainly involves building reliable backend infrastructure with C++ and Go, improving
+      system resilience, and developing tools for production monitoring and troubleshooting.
+    </p>
+    <p>
+      My current interests include distributed systems, recommendation systems, AI agents,
+      and AI infrastructure. I enjoy exploring how modern AI capabilities can be integrated
+      into practical engineering workflows and production systems.
+    </p>
+    <p>
+      Before that, I received my M.Eng. in Materials Science and Engineering from the
+      University of Electronic Science and Technology of China, and my B.Eng. in New Energy
+      Materials and Devices from Wuhan University of Technology.
+    </p>
+  </div>
+</div>

@@ -1,21 +1,12 @@
 ---
+import AboutIntro from '../components/AboutIntro.astro';
+import AboutVisual from '../components/AboutVisual.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About" description="About Syuan">
-  <section class="hero">
-    <div>
-      <p class="eyebrow">About</p>
-      <h1>Syuan</h1>
-      <p>Backend engineer writing notes about software engineering, computer science, and practical development experience.</p>
-    </div>
-  </section>
-
-  <section class="about-grid">
-    <img src="/static/img/profile.jpg" alt="Syuan profile photo" width="180" height="180" />
-    <div class="prose">
-      <p>Hi, I am Syuan. This site collects my technical notes and learning references.</p>
-      <p>You can find me on <a href="https://github.com/syuancheng">GitHub</a>.</p>
-    </div>
+<BaseLayout title="About" description="About Siyuan Cheng">
+  <section class="about-construction">
+    <AboutIntro />
+    <AboutVisual />
   </section>
 </BaseLayout>

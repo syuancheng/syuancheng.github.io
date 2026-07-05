@@ -19,7 +19,7 @@ const { post } = Astro.props as Props;
 const { Content } = post;
 ---
 
-<BaseLayout title={post.title} description={`${post.title} by ${post.author}`}>
+<BaseLayout title={post.title} description={`${post.title} by ${post.author}`} stickyNav={false}>
   <article>
     <header class="post-header">
       <p class="eyebrow">Article</p>

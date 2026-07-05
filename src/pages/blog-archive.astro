@@ -1,23 +1,86 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatDate, posts } from '../lib/posts';
+import { formatDate, posts, tagSlug, tagSummaries } from '../lib/posts';
 ---
 
 <BaseLayout title="Blog Archive" description="All blog posts by Syuan">
-  <section class="hero">
-    <div>
-      <p class="eyebrow">Archive</p>
-      <h1>Blog Archive</h1>
+  <section class="section section-first archive-page" aria-labelledby="archiveTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Archive</p>
+        <h1 id="archiveTitle">Blog Archive</h1>
+      </div>
       <p>All posts, newest first.</p>
     </div>
+
+    <div class="filter-bar archive-filter-tabs" role="group" aria-label="Filter archive by tag">
+      <button class="filter-button active" type="button" data-archive-filter="all">All</button>
+      {tagSummaries.map(({ tag, slug, posts: taggedPosts }) => (
+        <button class="filter-button" type="button" data-archive-filter={slug}>
+          {tag}
+          <span>{taggedPosts.length}</span>
+        </button>
+      ))}
+    </div>
+
+    <p class="archive-filter-status" data-archive-status>
+      Showing all {posts.length} posts.
+    </p>
+
+    <ol class="archive-list">
+      {posts.map((post) => (
+        <li data-archive-row data-tags={post.tags.map((tag) => tagSlug(tag)).join(' ')}>
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+          <div>
+            <a href={post.href}>{post.title}</a>
+            {post.tags.length > 0 && (
+              <div class="tags archive-row-tags">
+                {post.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <p class="archive-empty" data-archive-empty hidden>No posts for this tag yet.</p>
   </section>
 
-  <ol class="archive-list">
-    {posts.map((post) => (
-      <li>
-        <time datetime={post.date}>{formatDate(post.date)}</time>
-        <a href={post.href}>{post.title}</a>
-      </li>
-    ))}
-  </ol>
+  <script>
+    const archiveButtons = Array.from(document.querySelectorAll('[data-archive-filter]'));
+    const archiveRows = Array.from(document.querySelectorAll('[data-archive-row]'));
+    const archiveStatus = document.querySelector('[data-archive-status]');
+    const archiveEmpty = document.querySelector('[data-archive-empty]');
+
+    function renderArchiveFilter(filter: string, label: string) {
+      let visibleCount = 0;
+
+      archiveRows.forEach((row) => {
+        const archiveRow = row as HTMLElement;
+        const matches = filter === 'all' || archiveRow.dataset.tags?.split(' ').includes(filter);
+        archiveRow.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+
+      if (archiveStatus) {
+        archiveStatus.textContent = filter === 'all'
+          ? `Showing all ${visibleCount} posts.`
+          : `Showing ${visibleCount} posts tagged ${label}.`;
+      }
+
+      if (archiveEmpty instanceof HTMLElement) archiveEmpty.hidden = visibleCount > 0;
+    }
+
+    archiveButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        archiveButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+        const archiveButton = button as HTMLElement;
+        renderArchiveFilter(
+          archiveButton.dataset.archiveFilter ?? 'all',
+          archiveButton.firstChild?.textContent?.trim() ?? 'All',
+        );
+      });
+    });
+  </script>
 </BaseLayout>

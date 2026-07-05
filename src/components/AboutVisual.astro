@@ -1,0 +1,144 @@
+---
+import { tagSummaries } from '../lib/posts';
+
+const maxTagCount = Math.max(...tagSummaries.map((summary) => summary.posts.length), 1);
+const minTagCount = Math.min(...tagSummaries.map((summary) => summary.posts.length), maxTagCount);
+
+const cloudLayouts = [
+  { x: 50, y: 49, tone: 1, tilt: 0, bonus: 16 },
+  { x: 22, y: 23, tone: 3, tilt: 0, bonus: 10 },
+  { x: 77, y: 29, tone: 2, tilt: 0, bonus: 9 },
+  { x: 32, y: 68, tone: 2, tilt: 0, bonus: 8 },
+  { x: 73, y: 67, tone: 3, tilt: -5, bonus: 7 },
+  { x: 18, y: 47, tone: 1, tilt: -8, bonus: 3 },
+  { x: 84, y: 48, tone: 1, tilt: 0, bonus: 3 },
+  { x: 30, y: 86, tone: 2, tilt: 0, bonus: 2 },
+  { x: 58, y: 85, tone: 1, tilt: 0, bonus: 2 },
+  { x: 80, y: 86, tone: 2, tilt: 0, bonus: 2 },
+  { x: 18, y: 75, tone: 3, tilt: -7, bonus: 0 },
+  { x: 50, y: 22, tone: 3, tilt: 0, bonus: 0 },
+];
+
+function tagDisplayName(tag: string): string {
+  return tag
+    .split(/([\s+-]+)/)
+    .map((part) => {
+      if (/^[\s+-]+$/.test(part)) return part;
+      if (part.toLowerCase() === 'github') return 'GitHub';
+      if (part.toLowerCase() === 'golang') return 'Golang';
+      if (part.toLowerCase() === 'docusaurus') return 'Docusaurus';
+      return part.toUpperCase() === part ? part : part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join('');
+}
+
+const cloudWords = tagSummaries.map(({ tag, posts }, index) => {
+  const layout = cloudLayouts[index % cloudLayouts.length];
+  const ratio = maxTagCount === minTagCount
+    ? 0.65
+    : (posts.length - minTagCount) / (maxTagCount - minTagCount);
+
+  return {
+    label: tagDisplayName(tag),
+    size: Math.round(18 + ratio * 34 + layout.bonus),
+    ...layout,
+  };
+});
+---
+
+<aside class="about-side" aria-label="Article tag cloud">
+  <div class="about-cloud-words">
+    {cloudWords.map((word) => (
+      <span
+        class={`about-cloud-word tone-${word.tone}`}
+        style={`--size: ${word.size}px; --x: ${word.x}%; --y: ${word.y}%; --tilt: ${word.tilt}deg;`}
+      >
+        {word.label}
+      </span>
+    ))}
+  </div>
+</aside>
+
+<div class="visitor-map" aria-label="Visitor location map" data-visitor-map>
+  <iframe
+    class="visitor-map-frame"
+    title="Visitor location map"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    data-visitor-map-frame
+    hidden
+  ></iframe>
+  <div class="visitor-map-placeholder" data-visitor-map-placeholder>
+    <svg class="visitor-map-art" viewBox="0 0 560 260" role="img" aria-label="World map">
+      <path d="M82 96c25-30 70-39 107-22 18 8 42 4 63-3 33-12 70-5 97 17 17 14 43 17 65 13 32-6 61 9 77 36 17 30 7 65-23 82-37 21-91 8-127-16-26-18-58-20-84-2-35 24-84 29-122 8-41-23-76-69-53-113Z" />
+      <path d="M124 48c39-20 85-18 118 4 17 11 24 29 15 43-11 18-41 20-68 12-40-12-86-21-65-59Z" />
+      <path d="M344 52c55-25 124-9 153 37 16 26 4 58-28 65-45 10-89-23-122-55-21-20-26-36-3-47Z" />
+      <path d="M230 143c23-13 53-11 70 5 17 15 17 39 0 55-19 17-52 16-72-3-18-17-17-43 2-57Z" />
+      <path d="M402 174c26-13 65-4 82 19 13 18 7 40-15 49-29 12-70 0-84-24-10-17-4-35 17-44Z" />
+    </svg>
+  </div>
+  <div class="visitor-map-caption">
+    <span class="visitor-dot"></span>
+    <span class="visitor-location" data-visitor-location>Locating visitor...</span>
+    <span class="visitor-coordinates" data-visitor-coordinates></span>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('[data-visitor-map]').forEach((visitorMap) => {
+    const visitorMapFrame = visitorMap.querySelector('[data-visitor-map-frame]');
+    const visitorMapPlaceholder = visitorMap.querySelector('[data-visitor-map-placeholder]');
+    const visitorLocation = visitorMap.querySelector('[data-visitor-location]');
+    const visitorCoordinates = visitorMap.querySelector('[data-visitor-coordinates]');
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateVisitorMap(latitude, longitude) {
+      if (!visitorMapFrame || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+
+      const delta = 0.18;
+      const left = clamp(longitude - delta, -180, 180);
+      const right = clamp(longitude + delta, -180, 180);
+      const bottom = clamp(latitude - delta, -85, 85);
+      const top = clamp(latitude + delta, -85, 85);
+      const params = new URLSearchParams({
+        bbox: `${left},${bottom},${right},${top}`,
+        layer: 'mapnik',
+        marker: `${latitude},${longitude}`,
+      });
+
+      visitorMapFrame.src = `https://www.openstreetmap.org/export/embed.html?${params.toString()}`;
+      visitorMapFrame.hidden = false;
+      if (visitorMapPlaceholder) visitorMapPlaceholder.hidden = true;
+    }
+
+    if (visitorLocation) {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 3000);
+
+      fetch('https://ipwho.is/', { signal: controller.signal })
+        .then((response) => response.ok ? response.json() : Promise.reject())
+        .then((data) => {
+          if (!data?.success) throw new Error('Visitor location unavailable');
+          const location = [data.city, data.region, data.country].filter(Boolean).join(', ');
+          visitorLocation.textContent = location || 'Visitor location unavailable';
+          const latitude = Number(data.latitude);
+          const longitude = Number(data.longitude);
+          updateVisitorMap(latitude, longitude);
+
+          if (visitorCoordinates && Number.isFinite(latitude) && Number.isFinite(longitude)) {
+            visitorCoordinates.textContent = `${latitude.toFixed(2)}, ${longitude.toFixed(2)}`;
+          }
+        })
+        .catch(() => {
+          visitorLocation.textContent = 'Visitor location unavailable';
+          if (visitorCoordinates) visitorCoordinates.textContent = '';
+        })
+        .finally(() => {
+          window.clearTimeout(timeout);
+        });
+    }
+  });
+</script>
