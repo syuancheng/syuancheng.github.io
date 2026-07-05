@@ -5,7 +5,7 @@ author: Syuan
 author_title: Back End Engineer @ Shopee
 author_url: https://github.com/syuancheng
 author_image_url: https://raw.githubusercontent.com/syuancheng/images/master/.github/resource/profile_460x460.jpg
-tags: [Blog, docusaurus, Github]
+tags: [Docusaurus, Github]
 ---
 
 [Docusaurus](https://docusaurus.io/docs) will help you ship a **beautiful documentation** site in no time.
