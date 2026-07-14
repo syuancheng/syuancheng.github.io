@@ -17,6 +17,9 @@ export const getStaticPaths = (() => {
 
 const { post } = Astro.props as Props;
 const { Content } = post;
+const tocHeadings = post
+  .getHeadings()
+  .filter((heading) => heading.depth >= 2 && heading.depth <= 4);
 ---
 
 <BaseLayout title={post.title} description={`${post.title} by ${post.author}`} stickyNav={false}>
@@ -31,8 +34,23 @@ const { Content } = post;
         </div>
       )}
     </header>
-    <div class="prose">
-      <Content />
+    <div class="post-layout">
+      <div class="prose">
+        <Content />
+      </div>
+
+      {tocHeadings.length > 0 && (
+        <aside class="post-toc" aria-label="Table of contents">
+          <div class="post-toc-title" data-i18n="tocContents">Contents</div>
+          <ol>
+            {tocHeadings.map((heading) => (
+              <li class={`toc-depth-${heading.depth}`}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      )}
     </div>
   </article>
 </BaseLayout>
